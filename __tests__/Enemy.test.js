@@ -31,6 +31,14 @@ test('checks if enemy is alive or not', () => {
     expect(enemy.isAlive()).toBeFalsy();
 });
 
+test("gets enemy's attack value", () => {
+    const enemy = new Enemy('goblin', 'sword');
+    enemy.stength = 10;
+
+    expect(enemy.getAttackValue()).toBeGreaterThanOrEqual(5);
+    expect(enemy.getAttackValue()).toBeLessThanOrEqual(15);
+});
+
 test("subtracts from enemy's health", () => {
     const enemy = new Enemy('goblin', 'sword');
     const oldHealth = enemy.health;
